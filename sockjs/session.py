@@ -120,6 +120,8 @@ class Session(object):
         self._heartbeat_transport = False
 
     def _heartbeat(self):
+        self._tick()
+        
         self._heartbeats += 1
         if self._heartbeat:
             self._feed(FRAME_HEARTBEAT, FRAME_HEARTBEAT)
